@@ -12,3 +12,5 @@ int main() {
 }
 
 // prints 10, not 11
+
+//  you are passing a copy of its value, not the original variable itself.
