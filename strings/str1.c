@@ -3,6 +3,9 @@
 
 void main(void)
 {
+   char *p = "Hello, world!";
+   // p[0] = 'w'; // this is not allowed, because p is a pointer to a string literal
+   // which is stored in read-only memory.
 
    char s[] = "Hello, world!";
    char t[100];
@@ -35,7 +38,7 @@ int str_len(char *s)
 {
    int count = 0;
 
-   while (s[count] != '\0')
+   while (s[count] != '\0') // single quotes for single character
    {
       count++;
    }
