@@ -1,4 +1,5 @@
 #include <stdio.h>
+int write_file(void);
 
 void read_lines(void) {
     FILE *fp;
@@ -31,4 +32,24 @@ void main()
     // printf("%c\n", c);
 
     read_lines();
+    write_file();
 }
+
+//Streams are largely categorized two different ways: text and binary.
+
+// writing text files , fputc(), fputs(), fprintf()
+// reading text files , fgetc(), fgets(), fscanf()
+
+int write_file (){
+    FILE *fp;
+    int x = 32;
+
+    // fp = fopen("output.txt", "w");
+    fp = stdout; // since stdout is a file pointer to the standard output (console) - the program would be printing to the console instead of a file
+
+    fputc('B', fp);
+    fputc('\n', fp); // new line
+    fprintf(fp, "The value of x is %d\n", x);
+    fputs("Hello World\n", fp);
+    fclose(fp);
+};
