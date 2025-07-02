@@ -1,0 +1,5 @@
+When growing memory like this, it’s common (though hardly a law) to double the space needed each step
+just to minimize the number of realloc()s that occur.
+
+Finally you might note that readline() returns a pointer to a malloc()d buffer. As such, it’s up to the
+caller to explicitly free() that memory when it’s done with it.
